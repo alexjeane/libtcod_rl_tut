@@ -3,6 +3,7 @@ from multiprocessing import Event
 import tcod
 
 from actions import EscapeAction, MovementAction
+from entity import Entity
 from input_handlers import EventHandler
 
 
