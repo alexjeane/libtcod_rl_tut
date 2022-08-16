@@ -1,2 +1,6 @@
 __pycache__/actions.cpython-310.pyc
 __pycache__/engine.cpython-310.pyc
+__pycache__/entity.cpython-310.pyc
+__pycache__/game_map.cpython-310.pyc
+__pycache__/input_handlers.cpython-310.pyc
+__pycache__/tile_types.cpython-310.pyc
