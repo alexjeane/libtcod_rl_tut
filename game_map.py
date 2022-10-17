@@ -47,7 +47,7 @@ class GameMap:
         )
         for entity in self.entities:
             # Only print entities that are in the FOV
-            if self.game_map.visible[entity.x, entity.y]:
+            if self.visible[entity.x, entity.y]:
                 console.print(entity.x, entity.y, entity.char, fg=entity.color)
 
         
