@@ -2,13 +2,13 @@ from __future__ import annotations
 
 from typing import List, Tuple
 
-import numpy as np
+import numpy as np # type: ignore
 import tcod
 
 from actions import Action
 from components.base_component import BaseComponent
 
-class BaseAi(Action, BaseComponent):
+class BaseAI(Action, BaseComponent):
     def perform(self) -> None:
         raise NotImplementedError()
 
