@@ -51,7 +51,7 @@ class ActionWithDirection(Action):
     @property
     def blocking_entity(self) -> Optional[Entity]:
         """Return the blocking entity at this action's destination."""
-        return self.engine.game_map.get_block_entity_at_location(*self.dest_xy)
+        return self.engine.game_map.get_blocking_entity_at_location(*self.dest_xy)
 
     def perform(self) -> None:
         raise NotImplementedError()
@@ -71,7 +71,7 @@ class MovementAction(ActionWithDirection):
             return # Destination is out of bounds.        
         if not self.engine.game_map.tiles["walkable"][dest_x, dest_y]:
             return # Destination is blocked by a tile.
-        if self.engine.game_map.get_block_entity_at_location(dest_x, dest_y):
+        if self.engine.game_map.get_blocking_entity_at_location(dest_x, dest_y):
             return  # Destination is blocked by an entity.
 
         self.entity.move(self.dx, self.dy)

@@ -1,4 +1,3 @@
-from email.errors import FirstHeaderLineIsContinuationDefect
 from components.ai import HostileEnemy
 from components.fighter import Fighter
 from entity import Actor
