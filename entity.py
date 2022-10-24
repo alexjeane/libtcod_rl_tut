@@ -17,6 +17,7 @@ class Entity:
     """
     A generic object to represent players, enemies, items, etc.
     """
+
     gamemap: GameMap
 
     def __init__(
@@ -66,6 +67,7 @@ class Entity:
         self.x += dx
         self.y += dy
 
+
 class Actor(Entity):
     def __init__(
         self,
@@ -74,7 +76,7 @@ class Actor(Entity):
         y: int = 0,
         char: str = "?",
         color: Tuple[int, int, int] = [255, 255, 255],
-        name: str = "",
+        name: str = "<Unnamed>",
         ai_cls: Type[BaseAI],
         fighter: Fighter
     ):
