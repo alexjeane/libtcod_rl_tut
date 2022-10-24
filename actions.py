@@ -6,6 +6,7 @@ if TYPE_CHECKING:
     from engine import Engine
     from entity import Actor, Entity
 
+
 class Action:
     def __init__(self, entity: Actor) -> None:
         super().__init__()
@@ -32,9 +33,11 @@ class EscapeAction(Action):
     def perform(self) -> None:
         raise SystemExit()
 
+
 class WaitAction(Action):
     def perform(self) -> None:
         pass
+
 
 class ActionWithDirection(Action):
     def __init__(self, entity: Actor, dx: int, dy: int):
@@ -76,6 +79,8 @@ class MeleeAction(ActionWithDirection):
             target.fighter.hp -= damage
         else:
             print(f"{attack_desc} but does no damage.")
+
+
 class MovementAction(ActionWithDirection):
     def perform(self) -> None:
         dest_x, dest_y = self.dest_xy
@@ -94,5 +99,6 @@ class BumpAction(ActionWithDirection):
     def perform(self) -> None:
         if self.target_actor:
             return MeleeAction(self.entity, self.dx, self.dy).perform()
+            
         else:
             return MovementAction(self.entity, self.dx, self.dy).perform()
