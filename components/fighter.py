@@ -9,6 +9,7 @@ from render_order import RenderOrder
 if TYPE_CHECKING:
     from entity import Actor
 
+
 class Fighter(BaseComponent):
     entity: Actor
 
@@ -25,6 +26,8 @@ class Fighter(BaseComponent):
     @hp.setter
     def hp(self, value: int) -> None:
         self._hp = max(0, min(value, self.max_hp))
+        if self._hp == 0 and self.entity.ai:
+            self.die()
 
     def die(self) -> None:
         if self.engine.player is self.entity:
