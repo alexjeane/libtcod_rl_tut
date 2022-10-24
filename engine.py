@@ -13,6 +13,7 @@ if TYPE_CHECKING:
     from game_map import GameMap
     from input_handlers import EventHandler
 
+
 class Engine:
     game_map: GameMap
 
@@ -35,7 +36,6 @@ class Engine:
         # If a tiles "visible" it should be added to "explored".
         self.game_map.explored |= self.game_map.visible
         
-
     def render(self, console: Console, context: Context) -> None:
         self.game_map.render(console)
 
@@ -48,5 +48,3 @@ class Engine:
         context.present(console)
 
         console.clear()
-
-        
