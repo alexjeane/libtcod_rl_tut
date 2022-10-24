@@ -6,3 +6,4 @@ __pycache__/input_handlers.cpython-310.pyc
 __pycache__/tile_types.cpython-310.pyc
 __pycache__/procgen.cpython-310.pyc
 __pycache__/entity_factories.cpython-310.pyc
+components/__pycache__/fighter.cpython-310.pyc
