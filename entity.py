@@ -36,6 +36,7 @@ class Entity:
         self.color = color
         self.name = name
         self.blocks_movement = blocks_movement
+        self.render_order = render_order
         if gamemap:
             # If gamemap isn't provided now then it will be set later.
             self.gamemap = gamemap
