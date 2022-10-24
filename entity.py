@@ -5,13 +5,13 @@ from typing import Optional, Tuple, Type, TypeVar, TYPE_CHECKING
 
 from render_order import RenderOrder
 
-
 if TYPE_CHECKING:
     from components.ai import BaseAI
     from components.fighter import Fighter
     from game_map import GameMap
 
 T = TypeVar("T", bound="Entity")
+
 
 class Entity:
     """
@@ -49,6 +49,7 @@ class Entity:
         clone = copy.deepcopy(self)
         clone.x = x
         clone.y = y
+        clone.gamemap = gamemap
         gamemap.entities.add(clone)
         return clone
 
