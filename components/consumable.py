@@ -10,6 +10,7 @@ from exceptions import Impossible
 if TYPE_CHECKING:
     from entity import Actor, Item
 
+
 class Consumable(BaseComponent):
     parent: Item
 
@@ -23,6 +24,7 @@ class Consumable(BaseComponent):
         'action' is the context for this activation.
         """
         raise NotImplementedError()
+
 
 class HealingConsumable(Consumable):
     def __init__(self, amount: int):
