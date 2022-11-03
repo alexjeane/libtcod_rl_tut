@@ -1,7 +1,6 @@
 from __future__ import annotations
-from typing import TYPE_CHECKING
 
-from numpy import maximum
+from typing import TYPE_CHECKING
 
 import color
 
@@ -9,6 +8,7 @@ if TYPE_CHECKING:
     from tcod import Console
     from engine import Engine
     from game_map import GameMap
+
 
 def get_names_at_location(x: int, y: int, game_map: GameMap) -> str:
     if not game_map.in_bounds(x, y) or not game_map.visible[x, y]:
@@ -19,6 +19,7 @@ def get_names_at_location(x: int, y: int, game_map: GameMap) -> str:
     )
 
     return names.capitalize()
+
 
 def render_bar(
     console: Console, current_value: int, maximum_value: int, total_width: int
@@ -35,6 +36,7 @@ def render_bar(
     console.print(
         x=1, y=45, string=f"HP: {current_value}/{maximum_value}", fg=color.bar_text
     )
+
 
 def render_names_at_mouse_location(
     console: Console, x: int, y: int, engine: Engine
