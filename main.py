@@ -70,5 +70,6 @@ def main() -> None:
                 # Then print the error to the message log.
                 engine.message_log.add_message(traceback.format_exc(), color.error)
 
+
 if __name__ == "__main__":
     main()
