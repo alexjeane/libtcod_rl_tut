@@ -14,17 +14,15 @@ graphic_dt = np.dtype(
 
 tile_dt = np.dtype(
     [
-
         ("walkable", np.bool), # True if this tile can be walked over.
         ("transparent", np.bool), # True if this tile doesn't block FOV.
         ("dark", graphic_dt), # Graphics for when this tile is not in FOV.
         ("light", graphic_dt), # Graphics for when this tile is in FOV.
     ]
-
 )
 
-def new_tile(
 
+def new_tile(
     *, # Enforce the use of keywords, so that parameter order doesn't matter.
     walkable:int,
     transparent:int,
