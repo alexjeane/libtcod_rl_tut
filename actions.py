@@ -31,6 +31,7 @@ class Action:
         """
         raise NotImplementedError()
 
+
 class PickupAction(Action):
     """Pickup an item and add it to the Inventory, if there is room for it."""
     
@@ -55,6 +56,7 @@ class PickupAction(Action):
                 return
 
         raise exceptions.Impossible("There is nothing here to pick up.")
+
 
 class ItemAction(Action):
     def __init__(
