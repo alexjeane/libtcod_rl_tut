@@ -172,9 +172,10 @@ class InventoryEventHandler(AskUserEventHandler):
         if number_of_items_in_inventory > 0:
             for i, item in enumerate(self.engine.player.inventory.items):
                 item_key = chr(ord("a") + i)
-                console.print(x + 1, y + i + 1, f"({item_key}) { item.name}")
+                console.print(x + 1, y + i + 1, f"({item_key}) {item.name}")
             else:
                 console.print(x + 1, y + 1, "(Empty)")
+
     def ev_keydown(self, event: tcod.event.KeyDown) -> Optional[Action]:
         player = self.engine.player
         key = event.sym
@@ -187,7 +188,6 @@ class InventoryEventHandler(AskUserEventHandler):
                 self.engine.message_log.add_message("Invalid entry.", color.invalid)
                 return None
             return self.on_item_selected(selected_item)
-
         return super().ev_keydown(event)
 
     def on_item_selected(self, item: Item) -> Optional[Action]:
