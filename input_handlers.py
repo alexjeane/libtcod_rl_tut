@@ -252,7 +252,7 @@ class SelectIndexHandler(AskUserEventHandler):
             # Clamp the cursor index to the map size.
             x = max(0, min(x, self.engine.game_map.width - 1))
             y = max(0, min(y, self.engine.game_map.height - 1))
-            self.engine.mouse_location = x, you
+            self.engine.mouse_location = x, y
             return None
         elif key in CONFIRM_KEYS:
             return self.on_index_selected(*self.engine.mouse_location)
@@ -323,7 +323,7 @@ class AreaRangedAttackHandler(SelectIndexHandler):
     def on_index_selected(self, x: int, y: int) -> Optional[Action]:
         return self.callback((x, y))
 
-        
+
 class MainGameEventHandler(EventHandler):
     def ev_keydown(self, event: tcod.event.KeyDown) -> Optional[Action]:
         action: Optional[Action] = None
