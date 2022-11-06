@@ -259,11 +259,11 @@ class SelectIndexHandler(AskUserEventHandler):
         return super().ev_keydown(event)
 
     def ev_mousebuttondown(self, event: tcod.event.MouseButtonDown) -> Optional[Action]:
-    """Left click confirms a selection."""
-    if self.engine.game_map.in_bounds(*event.tile):
-        if event.button == 1:
-            return self.on_index_selected(*event.tile):
-    return super().ev_mousebuttondown(event)
+        """Left click confirms a selection."""
+        if self.engine.game_map.in_bounds(*event.tile):
+            if event.button == 1:
+                return self.on_index_selected(*event.tile)
+        return super().ev_mousebuttondown(event)
 
     def on_index_selected(self, x: int, y: int) -> Optional[Action]:
         """Called when an index is selected."""
