@@ -37,6 +37,7 @@ class Consumable(BaseComponent):
 
 class ConfusionConsumable(Consumable):
     def __init__(self, number_of_turns: int):
+        self.number_of_turns = number_of_turns
 
     def get_action(self, consumer: Actor) -> Optional[actions.Action]:
         self.engine.message_log.add_message(
@@ -64,7 +65,7 @@ class ConfusionConsumable(Consumable):
             color.status_effect_applied,
         )
         target.ai = components.ai.ConfusedEnemy(
-            entity=target, previous_ai, turns_remaining=self.number_of_turns,
+            entity=target, previous_ai=target.ai, turns_remaining=self.number_of_turns,
         )
         self.consume()
 
