@@ -107,7 +107,7 @@ class FireballDamageConsumable(Consumable):
         target_xy = action.target_xy
 
         if not self.engine.game_map.visible[target_xy]:
-            raies Impossible("You cannot target an area that you cannot see.")
+            raise Impossible("You cannot target an area that you cannot see.")
 
         targets_hit = False
         for actor in self.engine.game_map.actors:
@@ -122,7 +122,7 @@ class FireballDamageConsumable(Consumable):
             raise Impossible("There are no targets in the raidus.")
         self.consume()
 
-        
+
 class LightningDamageConsumable(Consumable):
     def __init__(self, damage: int, maximum_range: int):
         self.damage = damage
