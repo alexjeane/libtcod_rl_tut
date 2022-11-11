@@ -5,8 +5,8 @@ import tcod
 
 import color
 import exceptions
-import input_handlers
 import setup_game
+import input_handlers
 
 
 def save_game(handler: input_handlers.BaseEventHandler, filename: str) -> None:
@@ -32,7 +32,7 @@ def main() -> None:
         tileset=tileset,
         title="Yet Another Roguelike Tutorial",
         vsync=True,
-    )   as context:
+    ) as context:
         root_console = tcod.Console(screen_width, screen_height, order="F")
         try:
             while True:
