@@ -38,6 +38,7 @@ def new_game() -> Engine:
 
     engine.game_map = generate_dungeon(
         max_rooms=max_rooms,
+        room_min_size=room_min_size,
         room_max_size=room_max_size,
         map_width=map_width,
         map_height=map_height,
@@ -52,12 +53,14 @@ def new_game() -> Engine:
     )
     return engine
 
+
 def load_game(filename: str) -> Engine:
     """Load an Engine instance from a file."""
     with open(filename, "rb") as f:
         engine = pickle.loads(lzma.decompress(f.read()))
     assert isinstance(engine, Engine)
     return engine
+
 
 class MainMenu(input_handlers.BaseEventHandler):
     """Handle the main menu rendering and input."""
