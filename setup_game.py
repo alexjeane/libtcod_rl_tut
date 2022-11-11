@@ -46,7 +46,7 @@ def new_game() -> Engine:
         max_items_per_room=max_items_per_room,
         engine=engine,
     )
-    engine.update_fov
+    engine.update_fov()
 
     engine.message_log.add_message(
         "Hello and welcom, adventurer, to yet another dungeon!", color.welcome_text
@@ -98,7 +98,7 @@ class MainMenu(input_handlers.BaseEventHandler):
                 bg_blend=tcod.BKGND_ALPHA(64),
             )
 
-        def ev_keydown(
+    def ev_keydown(
             self, event: tcod.event.KeyDown
         ) -> Optional[input_handlers.BaseEventHandler]:
             if event.sym in (tcod.event.K_q, tcod.event.K_ESCAPE):
@@ -114,4 +114,4 @@ class MainMenu(input_handlers.BaseEventHandler):
             elif event.sym == tcod.event.K_n:
                 return input_handlers.MainGameEventHandler(new_game())
 
-            return None
+            return None    
