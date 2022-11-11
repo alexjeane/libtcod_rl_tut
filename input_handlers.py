@@ -81,7 +81,7 @@ class BaseEventHandler(tcod.event.EventDispatch[ActionOrHandler]):
         return self
     
     def on_render(self, console: tcod.Console) -> None:
-         raise NotImplementedError()
+        raise NotImplementedError()
 
     def ev_quit(self, event: tcod.event.Quit) -> Optional[Action]:
         raise SystemExit()
@@ -129,7 +129,7 @@ class EventHandler(BaseEventHandler):
                 # The player was killed sometime during or after the action.
                 return GameOverEventHandler(self.engine)
             return MainGameEventHandler(self.engine) # Return to the main handler.
-
+        return self
 
     def handle_action(self, action: Optional[Action]) -> bool:
         """Handle actions returned from event methods
