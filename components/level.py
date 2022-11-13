@@ -8,7 +8,7 @@ if TYPE_CHECKING:
     from entity import Actor
 
 
-class Level(BaseComponent()):
+class Level(BaseComponent):
     parent: Actor
 
     def __init(
