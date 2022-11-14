@@ -87,6 +87,7 @@ class WaitAction(Action):
     def perform(self) -> None:
         pass
 
+
 class TakeStairsAction(Action):
     def perform(self) -> None:
         """
