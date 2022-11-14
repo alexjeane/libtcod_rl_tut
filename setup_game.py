@@ -8,6 +8,7 @@ import traceback
 from typing import Optional
 
 import tcod
+
 import color
 from engine import Engine
 import entity_factories
