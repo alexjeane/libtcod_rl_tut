@@ -52,7 +52,6 @@ class Entity:
         return self.parent.gamemap
     
     def spawn(self: T, gamemap: GameMap, x: int, y: int) -> T:
-
         """Spawn a copy of this instance at the given location."""
         clone = copy.deepcopy(self)
         clone.x = x
@@ -123,6 +122,7 @@ class Actor(Entity):
     def is_alive(self) -> bool:
         """Returns True as long as this actor can perform actions."""
         return bool(self.ai)
+
 
 class Item(Entity):
     def __init__(
