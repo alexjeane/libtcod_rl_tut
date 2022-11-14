@@ -189,6 +189,7 @@ class AskUserEventHandler(EventHandler):
         """
         return MainGameEventHandler(self.engine)
 
+
 class CharacterScreenEventHandler(AskUserEventHandler):
     TITLE = "Character Information"
 
@@ -233,6 +234,7 @@ class CharacterScreenEventHandler(AskUserEventHandler):
         console.print(
             x=x + 1, y=y + 5, string=f"Defense: {self.engine.player.fighter.defense}"
         )
+
 
 class LevelUpEventHandler(AskUserEventHandler):
     TITLE = "Level Up"
