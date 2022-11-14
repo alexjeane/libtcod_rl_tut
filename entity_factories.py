@@ -5,6 +5,7 @@ from components.inventory import Inventory
 from components.level import Level
 from entity import Actor, Item
 
+
 player = Actor(
     char="@",
     color=(255, 255, 255),
