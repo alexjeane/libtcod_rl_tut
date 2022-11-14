@@ -196,9 +196,14 @@ class LevelUpEventHandler(AskUserEventHandler):
     def on_render(self, console: tcod.Console) -> None:
         super().on_render(console)
 
+        if self.engine.player.x <= 30:
+            x = 40
+        else:
+            x = 0
+
         console.draw_frame(
             x=x,
-            y=y,
+            y=0,
             width=35,
             height=8,
             title=self.TITLE,
@@ -208,7 +213,7 @@ class LevelUpEventHandler(AskUserEventHandler):
         )
 
         console.print(x=x + 1, y=1, string="Congratulations! You level up!")
-        console.print(x=x, y=2, string="Select an attribute to increase.")
+        console.print(x=x + 1, y=2, string="Select an attribute to increase.")
 
         console.print(
             x=x + 1,
@@ -246,13 +251,13 @@ class LevelUpEventHandler(AskUserEventHandler):
         return super().ev_keydown(event)
 
     def ev_mousebuttondown(
-        self,
-        event: tcod.event.MouseButtonDown
+        self, event: tcod.event.MouseButtonDown
     ) -> Optional[ActionOrHandler]:
         """
         Don't allow the player to click to exit the menu, like normal.
         """
         return None
+
 
 class InventoryEventHandler(AskUserEventHandler):
     """This handler lets the user select an item.
