@@ -11,7 +11,7 @@ if TYPE_CHECKING:
 class Level(BaseComponent):
     parent: Actor
 
-    def __init(
+    def __init__(
         self,
         current_level: int = 1,
         current_xp: int = 0,
