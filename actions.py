@@ -83,8 +83,8 @@ class DropItem(ItemAction):
     def perform(self) -> None:
         if self.entity.equipment.item_is_equipped(self.item):
             self.entity.equipment.toggle_equip(self.item)
-            
-        return self.entity.inventory.drop(self.item)
+
+        self.entity.inventory.drop(self.item)
 
 
 class EquipAction(Action):
