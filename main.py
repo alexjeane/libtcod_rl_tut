@@ -1,14 +1,19 @@
 #!/usr/bin/env python3
+
+# TODO
 import traceback
+
+# This is a roguelike centered module.  It aids in the use of things like pathfinding/field of view, etc.
 
 import tcod
 
+# These are references to other files in the project.  Doing this gets us the ability to make use of them.
 import color
 import exceptions
 import setup_game
 import input_handlers
 
-
+# Here is our first function (and it's a very important one at that). 
 def save_game(handler: input_handlers.BaseEventHandler, filename: str) -> None:
     """If the current event handler has an active Engine then save it."""
     if isinstance(handler, input_handlers.EventHandler):
