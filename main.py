@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 
-# TODO
+# This is a module with which python program (in our case, file) is calling which program.
+# This can be mighty useful in detecting the sources of errors.
 import traceback
 
 # This is a roguelike centered module.  It aids in the use of things like pathfinding/field of view, etc.
-
 import tcod
 
 # These are references to other files in the project.  Doing this gets us the ability to make use of them.
@@ -13,7 +13,9 @@ import exceptions
 import setup_game
 import input_handlers
 
-# Here is our first function (and it's a very important one at that). 
+# Here is our first written function (and it's a very important one at that).  It has two parameters: a request and a response.
+# It passes in a request.  In this case, there's the BaseEventHandler passed in from input_handlers.  It responds (or can respond)
+# with a filename so as to save the game.
 def save_game(handler: input_handlers.BaseEventHandler, filename: str) -> None:
     """If the current event handler has an active Engine then save it."""
     if isinstance(handler, input_handlers.EventHandler):
